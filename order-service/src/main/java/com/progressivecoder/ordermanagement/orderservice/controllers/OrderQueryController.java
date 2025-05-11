@@ -5,6 +5,8 @@ import com.progressivecoder.ordermanagement.orderservice.services.queries.OrderQ
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/orders")
 @Tag(name = "Order Queries", description = "Order Queries Related Endpoints")
@@ -19,5 +21,10 @@ public class OrderQueryController {
     @GetMapping("/{orderId}")
     public OrderResponseDTO getOrderById(@PathVariable String orderId) {
         return orderQueryService.getOrderById(orderId);
+    }
+
+    @GetMapping
+    public List<OrderResponseDTO> getAllOrders() {
+        return orderQueryService.getAllOrders();  // Endpoint for fetching all orders
     }
 }
