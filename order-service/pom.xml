@@ -78,7 +78,7 @@
 		<dependency>
 			<groupId>com.progressivecoder.saga-pattern</groupId>
 			<artifactId>core-apis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>  <!-- Match the version in core-apis -->
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

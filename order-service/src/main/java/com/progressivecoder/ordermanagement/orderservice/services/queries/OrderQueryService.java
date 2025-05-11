@@ -5,3 +5,4 @@ import com.progressivecoder.ordermanagement.orderservice.dto.queries.OrderRespon
 public interface OrderQueryService {
     OrderResponseDTO getOrderById(String orderId);
 }
+
