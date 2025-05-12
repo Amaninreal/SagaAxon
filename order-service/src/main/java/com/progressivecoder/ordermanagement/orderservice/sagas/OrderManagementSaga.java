@@ -59,9 +59,9 @@ public class OrderManagementSaga {
 
     @SagaEventHandler(associationProperty = "orderId")
     public void handle(OrderShippedEvent orderShippedEvent){
-        logger.info("Handling OrderShippedEvent for orderId: {}", orderShippedEvent.orderId);
-        commandGateway.send(new UpdateOrderStatusCommand(orderShippedEvent.orderId, String.valueOf(OrderStatus.SHIPPED)));
-        logger.info("Sent UpdateOrderStatusCommand for orderId: {}", orderShippedEvent.orderId);
+        logger.info("Handling OrderShippedEvent for orderId: {}", orderShippedEvent.getOrderId());
+        commandGateway.send(new UpdateOrderStatusCommand(orderShippedEvent.getOrderId(), String.valueOf(OrderStatus.SHIPPED)));
+        logger.info("Sent UpdateOrderStatusCommand for orderId: {}", orderShippedEvent.getOrderId());
 
     }
 

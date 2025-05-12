@@ -7,9 +7,13 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Aggregate
 public class ShippingAggregate {
+
+    private static final Logger logger = LoggerFactory.getLogger(ShippingAggregate.class);
 
     @AggregateIdentifier
     private String shippingId;
@@ -23,12 +27,19 @@ public class ShippingAggregate {
 
     @CommandHandler
     public ShippingAggregate(CreateShippingCommand createShippingCommand){
-        AggregateLifecycle.apply(new OrderShippedEvent(createShippingCommand.shippingId, createShippingCommand.orderId, createShippingCommand.paymentId));
+        logger.info("Received CreateShippingCommand for orderId: {}", createShippingCommand.getOrderId());
+        AggregateLifecycle.apply(new OrderShippedEvent(
+                createShippingCommand.getShippingId(),
+                createShippingCommand.getOrderId(),
+                createShippingCommand.getPaymentId()
+        ));
     }
 
     @EventSourcingHandler
     protected void on(OrderShippedEvent orderShippedEvent){
-        this.shippingId = orderShippedEvent.shippingId;
-        this.orderId = orderShippedEvent.orderId;
+        logger.info("Applied OrderShippedEvent for shippingId: {}", orderShippedEvent.getShippingId());
+        this.shippingId = orderShippedEvent.getShippingId();
+        this.orderId = orderShippedEvent.getOrderId();
+        this.paymentId = orderShippedEvent.getPaymentId();
     }
 }

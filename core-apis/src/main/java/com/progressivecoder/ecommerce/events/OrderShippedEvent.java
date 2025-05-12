@@ -2,15 +2,27 @@ package com.progressivecoder.ecommerce.events;
 
 public class OrderShippedEvent {
 
-    public final String shippingId;
+    private final String shippingId;
 
-    public final String orderId;
+    private final String orderId;
 
-    public final String paymentId;
+    private final String paymentId;
 
     public OrderShippedEvent(String shippingId, String orderId, String paymentId) {
         this.shippingId = shippingId;
         this.orderId = orderId;
         this.paymentId = paymentId;
+    }
+
+    public String getShippingId() {
+        return shippingId;
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public String getOrderId() {
+        return orderId;
     }
 }

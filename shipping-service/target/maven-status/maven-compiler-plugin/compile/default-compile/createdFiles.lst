@@ -1,2 +1,5 @@
+com/progressivecoder/shippingmanagement/shippingservice/config/AxonConfig.class
 com/progressivecoder/shippingmanagement/shippingservice/ShippingServiceApplication.class
+com/progressivecoder/shippingmanagement/shippingservice/config/OpenAPIConfig.class
 com/progressivecoder/shippingmanagement/shippingservice/aggregates/ShippingAggregate.class
+com/progressivecoder/shippingmanagement/shippingservice/controllers/ShippingController.class
