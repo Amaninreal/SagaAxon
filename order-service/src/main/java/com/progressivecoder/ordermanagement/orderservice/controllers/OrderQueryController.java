@@ -25,6 +25,6 @@ public class OrderQueryController {
 
     @GetMapping
     public List<OrderResponseDTO> getAllOrders() {
-        return orderQueryService.getAllOrders();  // Endpoint for fetching all orders
+        return orderQueryService.getAllOrders();
     }
 }

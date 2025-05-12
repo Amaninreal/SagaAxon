@@ -23,7 +23,7 @@ public class OrderQueryServiceImpl implements OrderQueryService {
         Order order = orderRepository.findByOrderId(orderId);
 
         if (order != null) {
-            return mapToOrderResponseDTO(order);  // Use the helper method for mapping
+            return mapToOrderResponseDTO(order);
         } else {
             throw new OrderNotFoundException("Order not found for id: " + orderId);
         }
@@ -31,21 +31,18 @@ public class OrderQueryServiceImpl implements OrderQueryService {
 
     @Override
     public List<OrderResponseDTO> getAllOrders() {
-        List<Order> orders = orderRepository.findAll(); // Fetch all orders from the database
-
-        // Use the helper method for each order in the list
+        List<Order> orders = orderRepository.findAll();
         return orders.stream()
                 .map(this::mapToOrderResponseDTO)
                 .collect(Collectors.toList());
     }
 
-    // Helper method to convert Order to OrderResponseDTO
     private OrderResponseDTO mapToOrderResponseDTO(Order order) {
         return new OrderResponseDTO(
                 order.getOrderId(),
-                order.getItemType().name(),   // Enum to String conversion
-                order.getPrice().intValue(),  // Assuming quantity can be calculated from price
-                order.getOrderStatus().name() // Enum to String conversion
+                order.getItemType().name(),
+                order.getPrice().intValue(),
+                order.getOrderStatus().name()
         );
     }
 }
