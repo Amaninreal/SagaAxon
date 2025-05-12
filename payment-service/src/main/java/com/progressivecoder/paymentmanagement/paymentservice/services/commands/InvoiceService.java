@@ -18,7 +18,6 @@ public class InvoiceService {
         String paymentId = UUID.randomUUID().toString();
 
         Invoice invoice = new Invoice(paymentId, createInvoiceDTO.getOrderId(), InvoiceStatus.PAID);
-
         return invoiceRepository.save(invoice);
     }
 }
