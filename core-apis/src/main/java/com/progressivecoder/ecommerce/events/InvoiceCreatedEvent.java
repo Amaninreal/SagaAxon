@@ -10,4 +10,12 @@ public class InvoiceCreatedEvent  {
         this.paymentId = paymentId;
         this.orderId = orderId;
     }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
 }

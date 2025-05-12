@@ -3,7 +3,7 @@
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/events/OrderCreatedEvent.java
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/commands/CreateOrderCommand.java
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/events/InvoiceCreatedEvent.java
-/home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/config/AxonConfig.java
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/events/OrderUpdatedEvent.java
+/home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/controller/DebugController.java
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/commands/CreateShippingCommand.java
 /home/nashtech/Documents/java-apps/CQRS-Axon-saga/core-apis/src/main/java/com/progressivecoder/ecommerce/events/OrderShippedEvent.java

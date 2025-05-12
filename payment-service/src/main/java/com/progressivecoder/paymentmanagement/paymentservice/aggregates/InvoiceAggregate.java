@@ -7,9 +7,12 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Aggregate
 public class InvoiceAggregate {
+    private static final Logger logger = LoggerFactory.getLogger(InvoiceAggregate.class);
 
     @AggregateIdentifier
     private String paymentId;
@@ -24,6 +27,7 @@ public class InvoiceAggregate {
     @CommandHandler
     public InvoiceAggregate(CreateInvoiceCommand createInvoiceCommand){
         AggregateLifecycle.apply(new InvoiceCreatedEvent(createInvoiceCommand.paymentId, createInvoiceCommand.orderId));
+        logger.info("Published InvoiceCreatedEvent with paymentId: {} and orderId: {}", createInvoiceCommand.paymentId, createInvoiceCommand.orderId);
     }
 
     @EventSourcingHandler
@@ -31,5 +35,6 @@ public class InvoiceAggregate {
         this.paymentId = invoiceCreatedEvent.paymentId;
         this.orderId = invoiceCreatedEvent.orderId;
         this.invoiceStatus = InvoiceStatus.PAID;
+        logger.info("Event sourced: InvoiceCreatedEvent for paymentId: {} and orderId: {}", invoiceCreatedEvent.paymentId, invoiceCreatedEvent.orderId);
     }
 }

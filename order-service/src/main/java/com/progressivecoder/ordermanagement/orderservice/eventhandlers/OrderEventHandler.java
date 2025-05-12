@@ -20,15 +20,14 @@ public class OrderEventHandler {
 
     @EventHandler
     public void on(OrderCreatedEvent event) {
-        // Persist the order when it's created by the aggregate
         Order order = new Order(
                 event.getOrderId(),
-                ItemType.valueOf(event.getItemType()),  // Convert string to ItemType enum
+                ItemType.valueOf(event.getItemType()),
                 event.getPrice(),
                 event.getCurrency(),
-                OrderStatus.valueOf(event.getOrderStatus())  // Convert string to OrderStatus enum
+                OrderStatus.valueOf(event.getOrderStatus())
         );
-        orderRepository.save(order);  // Save the order to the database
+        orderRepository.save(order);
     }
 
     @EventHandler

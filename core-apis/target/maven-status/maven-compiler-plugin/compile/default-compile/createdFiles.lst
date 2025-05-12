@@ -1,9 +1,9 @@
 com/progressivecoder/ecommerce/events/OrderShippedEvent.class
-com/progressivecoder/ecommerce/config/AxonConfig.class
 com/progressivecoder/ecommerce/commands/CreateShippingCommand.class
 com/progressivecoder/ecommerce/events/OrderUpdatedEvent.class
 com/progressivecoder/ecommerce/commands/CreateInvoiceCommand.class
 com/progressivecoder/ecommerce/commands/CreateOrderCommand.class
 com/progressivecoder/ecommerce/events/OrderCreatedEvent.class
+com/progressivecoder/ecommerce/controller/DebugController.class
 com/progressivecoder/ecommerce/events/InvoiceCreatedEvent.class
 com/progressivecoder/ecommerce/commands/UpdateOrderStatusCommand.class

@@ -26,7 +26,6 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    // Constructors, getters and setters
 
     public Order() {
     }
