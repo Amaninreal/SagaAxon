@@ -21,4 +21,16 @@ public class Invoice {
         this.orderId = orderId;
         this.status = status;
     }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public InvoiceStatus getStatus() {
+        return status;
+    }
 }
