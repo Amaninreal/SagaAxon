@@ -26,7 +26,8 @@ public class AxonConfig {
 
         xstream.allowTypesByWildcard(new String[] {
                 "com.progressivecoder.coreapis.**",
-                "com.progressivecoder.ecommerce.**"
+                "com.progressivecoder.ecommerce.**",
+                "com.progressivecoder.aws.**"
         });
 
         xstream.addPermission(NullPermission.NULL);

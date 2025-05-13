@@ -1,12 +1,15 @@
 package com.progressivecoder.ordermanagement.orderservice;
 
+import com.progressivecoder.aws.config.AwsConfig;
 import com.thoughtworks.xstream.XStream;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+
 
 @SpringBootApplication
+@Import(AwsConfig.class)
 public class OrderServiceApplication {
 
 	public static void main(String[] args) {

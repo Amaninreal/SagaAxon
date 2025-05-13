@@ -54,6 +54,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.progressivecoder.saga-pattern</groupId>
+			<artifactId>aws-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
 		<!-- H2 In-Memory Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
