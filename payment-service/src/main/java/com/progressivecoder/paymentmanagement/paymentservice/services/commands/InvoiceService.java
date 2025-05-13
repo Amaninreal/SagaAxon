@@ -11,8 +11,12 @@ import java.util.UUID;
 @Service
 public class InvoiceService {
 
-    @Autowired
-    private InvoiceRepository invoiceRepository;
+    private final InvoiceRepository invoiceRepository;
+
+
+    public InvoiceService(InvoiceRepository invoiceRepository) {
+        this.invoiceRepository = invoiceRepository;
+    }
 
     public Invoice createInvoice(CreateInvoiceDTO createInvoiceDTO) {
         String paymentId = UUID.randomUUID().toString();
