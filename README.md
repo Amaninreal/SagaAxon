@@ -3,7 +3,7 @@
 This project demonstrates a microservices-based architecture for an **E-commerce Order Management System** using the **Saga pattern** with the **Axon Framework**. The system handles distributed transactions across multiple bounded contexts including **Order**, **Payment**, and **Shipping**, coordinated via sagas to ensure consistency.
 
 ## Project Structure
-
+```
 sagaaxon/
 ├── aws-common/ # AWS integrations (S3, config)
 ├── core-apis/ # Shared API commands and events
@@ -13,7 +13,7 @@ sagaaxon/
 ├── pom.xml # Parent Maven configuration
 └── README.md # Project documentation
 
-
+```
 ---
 
 ## Tech Stack
